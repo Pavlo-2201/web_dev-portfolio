@@ -1,0 +1,266 @@
+:root {
+  --scene-size: 100px;
+  --primary-color: rgb(164, 172, 128);
+  --accent-color: rgba(164, 33, 204, 0.7);
+  --orb-color: #74ec2e;
+  --orb-glow: rgba(154, 231, 154, 0.7);
+  --transition-fast: 0.3s ease;
+  --transition-medium: 0.5s ease;
+  --transition-slow: 2s ease;
+}
+
+.container {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scene {
+  background-color: var(--primary-color);
+  width: var(--scene-size);
+  height: var(--scene-size);
+  position: relative;
+  overflow: hidden;
+  border: 3px solid #808080; 
+}
+
+.interactive-area {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.magic-container {
+  display: flex;
+  width: 40%;
+  height: 44%;
+  position: absolute;
+  left: 8%;
+  top: 55%;
+}
+
+.magic-base {
+  content: url("mag2.png");
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.magic-particle {
+  content: url("mag1.png");
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  top: 0;
+  animation: none; 
+}
+
+.left-particle {
+  left: 0%;
+}
+
+.right-particle {
+  left: 50%;
+}
+
+.magic-container:hover .left-particle {
+  animation: rotateClockwise 2s linear infinite;
+}
+
+.magic-container:hover .right-particle {
+  animation: rotateCounterClockwise 2s linear infinite;
+}
+
+/* Вращение по часовой стрелке */
+@keyframes rotateClockwise {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Вращение против часовой стрелки */
+@keyframes rotateCounterClockwise {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.orb-container {
+  width: 5%;
+  height: 5%;
+  border-radius: 50%;
+  position: absolute;
+  top: 63%;
+  left: 5%;
+  background: var(--orb-color);
+  box-shadow: 0 0 0 1px var(--orb-glow);
+  opacity: 0;
+  transition: transform 0.1s ease;
+}
+
+.orb-trail {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  background: var(--orb-color);
+  box-shadow: 0 0 0 1px var(--orb-glow);
+  opacity: 0;
+  transition: transform 0.1s ease;
+}
+
+.interactive-area:active .orb-container {
+  opacity: 1;
+  animation: orbTrajectory 6s linear infinite;
+}
+
+.interactive-area:active .orb-trail {
+  opacity: 1;
+  animation: orbPulse 6s linear infinite;
+}
+
+.bunny-character {
+  position: absolute;
+  width: 30%;
+  height: 80%;
+  left: 50%;
+  top: 35%;
+}
+
+.bunny-torso {
+  content: url("rabbit1.png");
+  width: 200%; 
+  height: 50%; 
+  position: absolute;
+  left: -40%;
+  top: 30%;
+  z-index: 1;
+}
+
+.bunny-face {
+  width: 150%;
+  height: 65%;
+  position: absolute;
+  z-index: 2;
+}
+
+.default-face {
+  visibility: visible;
+  content: url("rabbit2.png");
+  left: 0%;
+  top: -25%;
+  transition: opacity var(--transition-fast);
+}
+
+.surprised-face {
+  content: url("rabbit3.png");
+  left: -10%;
+  top: -25%;
+  visibility: hidden;
+  opacity: 0;
+  transition: all var(--transition-fast);
+}
+
+.interactive-area:hover .default-face {
+  opacity: 0;
+}
+
+.interactive-area:hover .surprised-face {
+  visibility: visible;
+  opacity: 1;
+}
+
+.message {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: none;
+  color: var(--accent-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-fast);
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  z-index: 3;
+}
+
+.preview-message {
+  top: -40%;
+  left: 0;
+}
+
+.active-message {
+  top: -20%;
+  left: -30%;
+  transform: rotate(-30deg);
+  transition: all var(--transition-medium);
+}
+
+.interactive-area:hover .preview-message {
+  opacity: 1;
+  visibility: visible;
+}
+
+.interactive-area:active .preview-message {
+  opacity: 0;
+}
+
+.interactive-area:active .active-message {
+  opacity: 1;
+  visibility: visible;
+}
+
+@keyframes orbTrajectory {
+  0% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  20% {
+    transform: rotate(75deg) translateX(10px) translateY(-42px);
+  }
+  40% {
+    transform: rotate(-2deg) translateX(80px) translateY(10px);
+  }
+  60% {
+    transform: rotate(-56deg) translateX(50px) translateY(30px);
+  }
+  87.5% {
+    transform: rotate(70deg) translateX(18px) translateY(0px);
+  }
+  100% {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes orbPulse {
+  0% { transform: scale(1); }
+  10% { transform: scale(1.5); }
+  20% { transform: scale(1); }
+  30% { transform: scale(1.5); }
+  40% { transform: scale(1); }
+  50% { transform: scale(1.5); }
+  60% { transform: scale(1); }
+  70% { transform: scale(1.5); }
+  80% { transform: scale(1); }
+  90% { transform: scale(1.5); }
+  100% { transform: scale(1); }
+}
+

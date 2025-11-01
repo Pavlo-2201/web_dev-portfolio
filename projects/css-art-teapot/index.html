@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Task1</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Стили навигации */
+    .project-navigation {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 20px;
+        padding: 15px;
+        background: #f8f9fa;
+        border-radius: 8px;
+    }
+    .nav-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 20px;
+        background: #667eea;
+        color: white;
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: 500;
+        transition: all 0.3s;
+    }
+    .nav-btn:hover {
+        background: #5a6fd8;
+        transform: translateY(-2px);
+    }
+    .nav-btn--back {
+        background: #6c757d;
+    }
+    .nav-btn--back:hover {
+        background: #5a6268;
+    }
+    body { 
+        display: block; 
+        background: #f3f3f3;
+        padding: 20px;
+    }
+    .task1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+  </style>
+</head>
+<body>
+    <!-- Навигация -->
+    <div class="project-navigation">
+        <a href="../../index.html" class="nav-btn nav-btn--back">← В портфолио</a>
+        <div>
+            <a href="../interactive-bunny/index.html" class="nav-btn">← Кролик</a>
+            <a href="../diggers-calculator/index.html" class="nav-btn">Землекопы →</a>
+        </div>
+    </div>
+
+  <main class="task1">
+    <div class="background">
+      <div class="scene">
+        <!-- Ваш оригинальный HTML -->
+        <div class="window">
+          <div class="sky"></div>
+
+          <div class="kettle">
+            <div class="kettle-ring"></div>
+            <div class="kettle-cap-hand"></div>
+            <div class="kettle-cap"></div>
+            <div class="kettle-nouse"></div>
+            <div class="kettle-body"></div>
+          </div>
+
+          <div class="sunny">
+            <div class="sunny-ring"></div>
+          </div>
+        </div>
+
+        <div class="figure-container-left">
+          <div class="figure"></div>
+          <div class="figure"></div>
+          <div class="figure"></div>
+          <div class="figure"></div>
+          <div class="figure"></div>
+        </div>
+
+        <div class="figure-container-right">
+          <div class="figure"></div>
+          <div class="figure"></div>
+          <div class="figure"></div>
+          <div class="figure"></div>
+          <div class="figure"></div>
+        </div>
+
+        <div class="figure-container-top">
+          <div class="figure"></div>
+          <div class="figure"></div>
+          <div class="figure"></div>
+          <div class="figure"></div>
+          <div class="figure"></div>
+        </div>
+
+        <div class="table">
+          <div class="table-panel"></div>
+          <div class="table-leg"></div>
+          <div class="table-support"></div>
+        </div>
+
+        <div class="chair">
+          <div class="chair-left-leg"></div>
+          <div class="chair-left-back"></div>
+          <div class="chair-left-seat">
+            <div class="chair-decoration-container chair-decoration-container__left">
+              <div class="chair-decoration-figure"></div>
+              <div class="chair-decoration-figure"></div>
+              <div class="chair-decoration-figure"></div>
+            </div>
+          </div>
+
+          <div class="chair-right-leg"></div>
+          <div class="chair-right-back"></div>
+          <div class="chair-right-seat">
+            <div class="chair-decoration-container chair-decoration-container__right">
+              <div class="chair-decoration-figure"></div>
+              <div class="chair-decoration-figure"></div>
+              <div class="chair-decoration-figure"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

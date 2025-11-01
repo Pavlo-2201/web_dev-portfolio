@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Вариант 4. Землекопы</title>
+    <style>
+        /* Ваши оригинальные стили */
+        .ditch-container {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        .brigade-choice {
+            display: flex;
+            gap: 15px;
+            margin: 10px 0;
+        }
+        .brigade-option {
+            text-align: center;
+            cursor: pointer;
+            border: 2px solid transparent;
+            padding: 8px;
+            border-radius: 6px;
+        }
+        .brigade-option.selected {
+            border-color: #4CAF50;
+            background-color: #f0f8f0;
+        }
+        .brigade-option img {
+            width: 120px;
+            height: 80px;
+            object-fit: cover;
+        }
+        .ditch-input {
+            margin: 10px 0;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 10px 0;
+        }
+        #resultContainer {
+            margin-top: 20px;
+        }
+        .result-item {
+            margin: 15px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .result-image {
+            max-width: 250px;
+            margin-top: 10px;
+        }
+
+        /* Стили навигации */
+        .project-navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px 0;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        .nav-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        .nav-btn:hover {
+            background: #5a6fd8;
+            transform: translateY(-2px);
+        }
+        .nav-btn--back {
+            background: #6c757d;
+        }
+        .nav-btn--back:hover {
+            background: #5a6268;
+        }
+    </style>
+</head>
+<body>
+    <!-- Навигация -->
+    <div class="project-navigation">
+        <a href="../../index.html" class="nav-btn nav-btn--back">← В портфолио</a>
+        <div>
+            <a href="../css-art-teapot/index.html" class="nav-btn">← Чайник</a>
+            <a href="../interactive-bunny/index.html" class="nav-btn">Кролик →</a>
+        </div>
+    </div>
+
+    <h1>Расчет землекопов для 3 канав</h1>
+    
+    <div id="ditchesContainer">
+    </div>
+
+    <button onclick="calculateWorkers()">Рассчитать количество землекопов</button>
+
+    <div id="resultContainer"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

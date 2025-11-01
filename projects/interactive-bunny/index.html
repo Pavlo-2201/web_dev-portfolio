@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Task2</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Стили навигации */
+    .project-navigation {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 20px;
+        padding: 15px;
+        background: #f8f9fa;
+        border-radius: 8px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .nav-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 20px;
+        background: #667eea;
+        color: white;
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: 500;
+        transition: all 0.3s;
+        font-family: Arial, sans-serif;
+    }
+    .nav-btn:hover {
+        background: #5a6fd8;
+        transform: translateY(-2px);
+    }
+    .nav-btn--back {
+        background: #6c757d;
+    }
+    .nav-btn--back:hover {
+        background: #5a6268;
+    }
+    body {
+        padding-top: 80px;
+    }
+  </style>
+</head>
+
+<body>
+    <!-- Навигация -->
+    <div class="project-navigation">
+        <a href="../../index.html" class="nav-btn nav-btn--back">← В портфолио</a>
+        <div>
+            <a href="../diggers-calculator/index.html" class="nav-btn">← Землекопы</a>
+            <a href="../css-art-teapot/index.html" class="nav-btn">Чайник →</a>
+        </div>
+    </div>
+
+  <div class="container">
+    <div class="scene">
+      <div class="interactive-area" >
+        <div class="magic-container">
+          <div class="magic-base"></div>
+          <div class="magic-particle left-particle"></div>
+          <div class="magic-particle right-particle"></div>
+        </div>
+
+        <div class="orb-container">
+          <div class="orb-trail"></div>
+        </div>
+
+        <div class="bunny-character">
+          <div class="bunny-torso"></div>
+          <div class="bunny-face default-face"></div>
+          <div class="bunny-face surprised-face"></div>
+        </div>
+
+        <div class="message preview-message">
+          что-то новенькое
+        </div>
+
+        <div class="message active-message">
+          Ура! Играет!
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
