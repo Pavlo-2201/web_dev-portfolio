@@ -54,6 +54,17 @@
   gap: 4.8rem;
 }
 
+.tech-logo {
+  opacity: 0.7;
+  transition: all 0.3s;
+  filter: none;
+}
+
+.tech-logo:hover {
+  opacity: 1;
+  transform: translateY(-3px);
+}
+
 .main-nav-link:link,
 .main-nav-link:visited {
   display: inline-block;
